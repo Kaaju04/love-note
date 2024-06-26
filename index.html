@@ -10,12 +10,14 @@
             height: 100%;
             margin: 0;
             font-family: Arial, sans-serif;
-            background: url('background-photo.jpg') no-repeat center center fixed;
-            background-size: cover;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start; /* Align items at the top */
             align-items: center;
+            background: url('background-photo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-attachment: fixed;
+            overflow-y: auto; /* Enable vertical scrolling */
         }
 
         .about-us {
@@ -26,13 +28,26 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             max-width: 90%; /* Make sure the content fits within the screen */
+            margin-top: 20px; /* Add some margin at the top */
         }
 
         .envelope-container {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             margin-top: 20px;
+        }
+
+        .envelope {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .envelope p {
+            margin: 10px 0 0;
+            font-size: 18px;
+            color: #ff69b4; /* Hot pink */
         }
 
         @media (max-width: 768px) {
@@ -44,6 +59,9 @@
                 width: 250px;
                 height: 250px;
             }
+            .envelope p {
+                font-size: 16px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -54,6 +72,9 @@
             .envelope-container lottie-player {
                 width: 200px;
                 height: 200px;
+            }
+            .envelope p {
+                font-size: 14px;
             }
         }
     </style>
@@ -67,7 +88,14 @@
         </p>
     </div>
     <div class="envelope-container">
-        <lottie-player src="https://lottie.host/c6dbece9-731c-44a5-a946-d8d1567eebf4/8kzs8ggtgV.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+        <div class="envelope" onclick="window.location.href='gallery.html'">
+            <lottie-player src="https://lottie.host/c6dbece9-731c-44a5-a946-d8d1567eebf4/8kzs8ggtgV.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+            <p>5th Month</p>
+        </div>
+        <div class="envelope" onclick="window.location.href='scrapbook.html'">
+            <lottie-player src="https://lottie.host/c6dbece9-731c-44a5-a946-d8d1567eebf4/8kzs8ggtgV.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+            <p>6th Month</p>
+        </div>
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -83,11 +111,6 @@
                     });
                 }
             });
-        });
-
-        // Adding event listener to the envelope animation to open gallery on click
-        document.querySelector('.envelope-container lottie-player').addEventListener('click', function() {
-            window.location.href = 'gallery.html';
         });
     </script>
 </body>
