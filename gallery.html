@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reshmi's Photos</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('pin-board-background.jpg'); /* Full-page background image */
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .pin-board {
+            position: relative;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .photo-container {
+            position: relative;
+            width: calc(33.33% - 20px); /* 3 photos per row */
+            height: auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .photo {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .photo-caption {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            background-color: rgba(255, 192, 203, 0.8); /* Light pink background */
+            padding: 5px;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .pin {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 40px;
+            background-color: #ff0000; /* Red color */
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            z-index: 1;
+        }
+
+        .message-overlay {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: rgba(255, 192, 203, 0.8); /* Light pink background */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 9999;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .photo-container {
+                width: calc(50% - 20px); /* 2 photos per row */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .photo-container {
+                width: calc(100% - 20px); /* 1 photo per row */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="background-music" src="background2-song.mp3" loop autoplay></audio>
+    <div class="pin-board">
+        <div class="photo-container" onclick="showMessage('My love for you knows no bounds happy 5 months of together forever my love i promise to always be with you in ever situation no matter how hard times get i will always hold your hands tight and never let you go iloveyou my resh.')">
+            <div class="pin"></div>
+            <img src="reshmi-photo1.jpg" alt="Reshmi Photo 1" class="photo">
+            <div class="photo-caption">My Love</div>
+        </div>
+        <div class="photo-container" onclick="showMessage('You are my sunshine on the darkest days, Reshmi. Your smile has the power to brighten even the gloomiest moments, filling my world with warmth and joy. When life presents its challenges and shadows loom, your presence is like a beacon of light, guiding me through every storm. Your love and positivity are my source of strength, and I am grateful for the way you illuminate my life with your unwavering brightness. With you by my side, I know that no matter how dark the days may seem, your radiant spirit will always light up our path.')">
+            <div class="pin"></div>
+            <img src="reshmi-photo2.jpg" alt="Reshmi Photo 2" class="photo">
+            <div class="photo-caption">My Sunshine</div>
+        </div>
+        <div class="photo-container" onclick="showMessage('Reshmi, you are my greatest blessing. The way you treat me with kindness, patience, and unwavering support is beyond words. You understand me in ways no one else does, making every day with you brighter and more meaningful. Your love and respect make me feel cherished and valued, and I thank the stars every day for bringing you into my life. You are not just my partner; you are my confidante, my rock, and my source of endless happiness. I am grateful for every moment with you and could not ask for a better person to share my life with. Youre truly one of a kind, and I love you more than words can express.')">
+            <div class="pin"></div>
+            <img src="reshmi-photo3.jpg" alt="Reshmi Photo 3" class="photo">
+            <div class="photo-caption">My Pookie</div>
+        </div>
+        <div class="photo-container" onclick="showMessage('Reshmi, I want you to know that I wll always be there for you, not just during the happy moments but also during the challenging times. I promise to stand by your side and be your strength when you are feeling low. Your struggles are my struggles, and I wll do everything in my power to support you and lift you up. Together, we wll navigate lifes ups and downs, hand in hand, and emerge stronger than ever. You can count on me to be your rock, your shoulder to lean on, and your unwavering support through every path of your life.')">
+            <div class="pin"></div>
+            <img src="reshmi-photo4.jpg" alt="Reshmi Photo 4" class="photo">
+            <div class="photo-caption">Mi amour</div>
+        </div>
+        <div class="photo-container" onclick="showMessage('Your smile is my favorite view in the entire universe. It lights up my world, bringing warmth and joy to every moment we share. Your laughter is like music to my ears, a melody that fills my heart with happiness. With each passing day, my love for you grows stronger, deeper, and more profound. You are not just my girlfriend; you are my best friend, my confidante, and my soulmate. I cherish every second we spend together, and I am grateful for every smile, every laugh, and every memory we create. I love you more than words can express, and I cant wait to spend the rest of my life making you smile. Forever and always, yours')">
+            <div class="pin"></div>
+            <img src="reshmi-photo5.jpg" alt="Reshmi Photo 5" class="photo">
+            <div class="photo-caption">My World</div>
+        </div>
+        <div class="photo-container" onclick="showMessage('Reshmi, you are my jaan, my world. I love you more than words can express, and I will always strive to keep that beautiful smile on your face. Your happiness means everything to me, and I promise to do everything in my power to ensure it. You are the light of my life, and I cherish every moment with you. With all my heart, I vow to be by your side, loving you, supporting you, and making you happy for all eternity.')">
+            <div class="pin"></div>
+            <img src="reshmi-photo6.jpg" alt="Reshmi Photo 6" class="photo">
+            <div class="photo-caption">My Jaan</div>
+        </div>
+        <!-- Add more photo containers as needed -->
+    </div>
+
+    <!-- Message Overlay -->
+    <div class="message-overlay" id="messageOverlay">
+        <span class="close-btn" onclick="hideMessage()">Close</span>
+        <p id="messageText"></p>
+    </div>
+
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('background-music');
+            audio.volume = 0.5; // Adjust volume level if necessary
+            audio.muted = false; // Unmute the audio after page load
+
+            // Play audio on user interaction (click event)
+            document.addEventListener('click', function() {
+                if (typeof audio.play === 'function') {
+                    audio.play().catch(function(error) {
+                        console.log('Audio playback failed:', error);
+                    });
+                }
+            });
+        });
+
+        function showMessage(message) {
+            var messageOverlay = document.getElementById('messageOverlay');
+            var messageText = document.getElementById('messageText');
+            messageText.textContent = message;
+            messageOverlay.style.display = 'block';
+        }
+
+        function hideMessage() {
+            var messageOverlay = document.getElementById('messageOverlay');
+            messageOverlay.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

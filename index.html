@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Story</title>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Align items at the top */
+            align-items: center;
+            background: url('background-photo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-attachment: fixed;
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+
+        .about-us {
+            text-align: center;
+            margin-bottom: 20px;
+            background: rgba(255, 192, 203, 0.6); /* Light pink with transparency */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 90%; /* Make sure the content fits within the screen */
+            margin-top: 20px; /* Add some margin at the top */
+        }
+
+        .envelope-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .envelope {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .envelope p {
+            margin: 10px 0 0;
+            font-size: 18px;
+            color: #ff69b4; /* Hot pink */
+        }
+
+        @media (max-width: 768px) {
+            .about-us {
+                padding: 15px;
+                font-size: 14px;
+            }
+            .envelope-container lottie-player {
+                width: 250px;
+                height: 250px;
+            }
+            .envelope p {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-us {
+                padding: 10px;
+                font-size: 12px;
+            }
+            .envelope-container lottie-player {
+                width: 200px;
+                height: 200px;
+            }
+            .envelope p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio id="background-music" src="background-song.mp3" loop autoplay muted></audio>
+    <div class="about-us">
+        <h1>Our Love Story</h1>
+        <p>        
+            We met unexpectedly on Christmas 2023, and in just moments, our hearts knew we had found something special. Our love grows stronger every day, fueled by laughter, deep conversations, and unwavering support. Reshmi's resilience and optimism complement my determination and commitment, creating a bond that feels like destiny. Our promise is of endless love, laughter, and a lifetime of cherished moments together.
+        </p>
+    </div>
+    <div class="envelope-container">
+        <div class="envelope" onclick="window.location.href='gallery.html'">
+            <lottie-player src="https://lottie.host/c6dbece9-731c-44a5-a946-d8d1567eebf4/8kzs8ggtgV.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+            <p>5th Month</p>
+        </div>
+        <div class="envelope" onclick="window.location.href='scrapbook.html'">
+            <lottie-player src="https://lottie.host/c6dbece9-731c-44a5-a946-d8d1567eebf4/8kzs8ggtgV.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+            <p>6th Month</p>
+        </div>
+        <div class="envelope" onclick="window.location.href='8th-month anniversary.html'">
+            <lottie-player src="https://lottie.host/c6dbece9-731c-44a5-a946-d8d1567eebf4/8kzs8ggtgV.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+            <p>8th Month</p>
+        </div>
+        <div class="envelope" onclick="window.location.href='11months.html'">
+            <lottie-player src="https://lottie.host/c6dbece9-731c-44a5-a946-d8d1567eebf4/8kzs8ggtgV.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+            <p>11th Month</p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('background-music');
+            audio.volume = 0.5; // Adjust volume level if necessary
+            audio.muted = false; // Unmute the audio after page load
+
+            // Play audio on user interaction (click event)
+            document.addEventListener('click', function() {
+                if (typeof audio.play === 'function') {
+                    audio.play().catch(function(error) {
+                        console.log('Audio playback failed:', error);
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8th Month Anniversary</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1; /* Light pink shade */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            position: relative;
+            max-width: 900px; /* Increased width */
+            padding: 40px; /* Increased padding */
+            background: rgba(255, 192, 203, 0.6); /* Light pink with transparency */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .poem {
+            font-size: 22px; /* Slightly larger font size */
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            position: relative;
+            z-index: 1; /* Ensure poem is above other elements */
+        }
+
+        .image-left {
+            position: absolute;
+            top: 80px; /* Moved image further down */
+            left: -300px; /* Moved image more to the left */
+            width: 300px; /* Larger image size */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-right {
+            position: absolute;
+            bottom: 100px; /* Adjusted position to move image up */
+            right: -400px; /* Adjusted position to move image right */
+            width: 400px; /* Larger image size */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .poem {
+                font-size: 20px;
+                padding: 15px;
+            }
+            .image-left, .image-right {
+                width: 150px; /* Adjusted for smaller screens */
+                top: 50px; /* Adjusted position */
+                left: -150px; /* Adjusted position */
+                bottom: 10px; /* Adjusted position */
+                right: -70px; /* Adjusted position */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .poem {
+                font-size: 18px;
+                padding: 10px;
+            }
+            .image-left, .image-right {
+                width: 100px; /* Adjusted for smaller screens */
+                top: 20px; /* Adjusted position */
+                left: -80px; /* Adjusted position */
+                bottom: 5px; /* Adjusted position */
+                right: -40px; /* Adjusted position */
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio id="background-music" src="background-song.mp3" loop autoplay muted></audio>
+    <div class="container">
+        <img src="left-image.jpg" alt="Image on the left" class="image-left">
+        <img src="right-image.jpg" alt="Image on the right" class="image-right">
+        <div class="poem">
+            <p>On the day we met, with playful jest,<br>
+            Who knew our hearts would be put to the test?<br>
+            From roasting words to love so deep,<br>
+            In each other's arms, we'd find our keep.</p>
+
+            <p>Through every fight, we stood our ground,<br>
+            In love’s embrace, we're always bound.<br>
+            With every tear and every laugh,<br>
+            We’ve walked together, shared the path.</p>
+
+            <p>The hurdles came, but we didn’t fall,<br>
+            We faced them head-on, standing tall.<br>
+            Hand in hand, we’ve won each fight,<br>
+            Together we’ve made the darkness bright.</p>
+
+            <p>Eight months have passed, and here we stand,<br>
+            Stronger together, hand in hand.<br>
+            Through ups and downs, we’ve found our way,<br>
+            In your love, I’ll forever stay.</p>
+
+            <p>Our journey’s just begun, it’s true,<br>
+            But I’m so blessed to be with you.<br>
+            Through every storm, and every cheer,<br>
+            I’ll love you more, year after year.</p>
+
+            <p>So here’s to us, my love, my friend,<br>
+            Together forever, till the very end.<br>
+            Eight months of love, of joy, and grace,<br>
+            With you, my love, I’ve found my place.</p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('background-music');
+            audio.volume = 0.5; // Adjust volume level if necessary
+            audio.muted = false; // Unmute the audio after page load
+
+            // Play audio on user interaction (click event)
+            document.addEventListener('click', function() {
+                if (typeof audio.play === 'function') {
+                    audio.play().catch(function(error) {
+                        console.log('Audio playback failed:', error);
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
